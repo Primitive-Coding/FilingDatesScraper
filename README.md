@@ -63,6 +63,7 @@ Get the filing dates for a company.
 ```
 
 - Adding to local storage will look like this.
+- The function `get_filing_dates()` will automatically save data to `filing_dates.csv`.
 
 ```
     fd = FilingDates("ORCL", alpha_vantage_key=alpha_vantage_key)
