@@ -41,18 +41,26 @@ class FilingDates:
         ]
         self.annual_params = ["a", "A", "Annual", "annual"]
 
-    """-----------------------------------"""
-
-    def _get_data_export_path(self):
-        with open("config.json", "r") as file:
-            data = json.load(file)
+   def _get_data_export_path(self):
+        try:
+            internal_path = f"{os.getcwd()}\\config.json"
+            with open(internal_path, "r") as file:
+                data = json.load(file)
+        except FileNotFoundError:
+            external_path = f"{os.getcwd()}\\FilingDatesScraper\\config.json"
+            with open(external_path, "r") as file:
+                data = json.load(file)
         return data["data_export_path"]
 
-    """-----------------------------------"""
-
     def _get_chrome_driver_path(self):
-        with open("config.json", "r") as file:
-            data = json.load(file)
+        try:
+            internal_path = f"{os.getcwd()}\\config.json"
+            with open(internal_path, "r") as file:
+                data = json.load(file)
+        except FileNotFoundError:
+            external_path = f"{os.getcwd()}\\FilingDatesScraper\\config.json"
+            with open(external_path, "r") as file:
+                data = json.load(file)
         return data["chrome_driver_path"]
 
     """-------------------------------"""
