@@ -41,7 +41,7 @@ class FilingDates:
         ]
         self.annual_params = ["a", "A", "Annual", "annual"]
 
-   def _get_data_export_path(self):
+    def _get_data_export_path(self):
         try:
             internal_path = f"{os.getcwd()}\\config.json"
             with open(internal_path, "r") as file:
